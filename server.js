@@ -6,10 +6,12 @@ require("dotenv").config();
 
 const app = express();
 
+// ✅ CORS setup
 app.use(cors({
+  origin: "https://eventassingment.vercel.app", // <-- your frontend URL
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
+  credentials: true, // allows cookies/session
 }));
 
 app.use(express.json());
@@ -42,7 +44,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to web service is Running." });
 });
 
-// ✅ Use routers correctly
+// ✅ Routers
 const eventRoutes = require("./routes/Event.Routes");
 const profileRoutes = require("./routes/Profile.Routes");
 
