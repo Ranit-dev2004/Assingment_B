@@ -39,7 +39,7 @@ db.mongoose
   });
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Jodiac web service." });
+  res.json({ message: "Welcome to web service is Running." });
 });
 
 // ✅ Use routers correctly
